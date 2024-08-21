@@ -17,7 +17,7 @@ public class Study03 {
      * 문제 : 수 N 개가 주어졌을 때 i 번째 수에서 j번째 수까지의 합을 구하는 프로그램을 작성하시오.
      */
 
-    public void day3() throws IOException {
+    public void algorithm() throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         //BufferedReader는 문자 입력 스트림에 대한 버퍼링된 입력 스트림을 제공합니다. 이것을 사용하여 키보드로부터의 입력을 받아들입니다.
         //InputStreamReader(System.in)은 표준 입력 스트림(System.in)을 InputStreamReader로 감싸는데, 이것은 바이트 스트림을 문자 스트림으로 변환하는 역할을 합니다.
@@ -30,7 +30,7 @@ public class Study03 {
 
         int suNo = Integer.parseInt(stringTokenizer.nextToken()); // 전체 데이터의 개수
         int quizNo = Integer.parseInt(stringTokenizer.nextToken()); // 합을 구해야하는 횟수
-        long[] S = new long[suNo + 1];
+        long[] sum = new long[suNo + 1];
 
         stringTokenizer = new StringTokenizer(bufferedReader.readLine());
         //라인은 다음 입력 줄을 읽어 들여서 그 줄을 토큰으로 분리할 준비를 하는 부분입니다
@@ -39,14 +39,17 @@ public class Study03 {
         // 이렇게 함으로써 반복적으로 사용자 입력을 받고 처리할 수 있습니다.
 
         for (int i = 1; i <= suNo; i++) {
-            S[i] = S[i - 1] + Integer.parseInt(stringTokenizer.nextToken()); // 합 배열 만들기 S[i] = S[i-1] + A[i]
+            sum[i] = sum[i - 1] + Integer.parseInt(stringTokenizer.nextToken());
+            // 합 배열 만들기 S[i] = S[i-1] + A[i]
         }
-
+        //[0, 5, 9, 12, 14, 15]
         for (int q = 0; q < quizNo; q++) {
             stringTokenizer = new StringTokenizer(bufferedReader.readLine());
             int i = Integer.parseInt(stringTokenizer.nextToken());
             int j = Integer.parseInt(stringTokenizer.nextToken());
-            System.out.println(S[j] - S[i - 1]); // 구간합 S[j] - S[i-1]
+            String result = sum[j] - sum[i - 1] + "";
+            // 구간합 S[j] - S[i-1]
+            System.out.println(result);
         }
     }
 }
