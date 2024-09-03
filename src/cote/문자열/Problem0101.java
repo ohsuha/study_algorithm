@@ -1,4 +1,4 @@
-package src.cote;
+package src.cote.문자열;
 
 import java.io.BufferedReader;
 import java.io.IOException;
