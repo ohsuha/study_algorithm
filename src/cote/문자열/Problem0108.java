@@ -34,4 +34,21 @@ public class Problem0108 {
 
 		System.out.println(result);
 	}
+
+	// 알파벳만 모아서 string builder 하고 reverse
+	public void solution1 () {
+		Scanner scanner = new Scanner(System.in);
+		String s = scanner.nextLine();
+
+		String answer = "NO";
+		s = s.toUpperCase().replaceAll("[^A-Z]","");
+		//"[^A-Z]" 가 아니면! ^ 는 부정
+		String compare = new StringBuffer(s).reverse().toString();
+
+		if (s.equals(compare)) {
+			answer = "YES";
+		}
+
+		System.out.println(answer);
+	}
 }
