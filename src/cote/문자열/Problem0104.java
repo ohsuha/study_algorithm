@@ -1,7 +1,5 @@
-package src.cote;
+package src.cote.문자열;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class Problem0104 {
