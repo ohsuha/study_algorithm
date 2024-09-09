@@ -12,6 +12,6 @@ import src.cote.array.Problem0209;
 public class Main {
 	public static void main(String[] args) {
 		Problem0209 pro = new Problem0209();
-		pro.algorithm();
+		pro.solution();
 	}
 }

@@ -81,7 +81,7 @@ public class Problem0209 {
 			}
 		}
 
-		int answer = Integer.MAX_VALUE;
+		int answer = Integer.MIN_VALUE;
 
 		int sum1;
 		int sum2;
@@ -101,6 +101,11 @@ public class Problem0209 {
 			sum1 += arr[i][i];
 			sum2+=arr[i][n-i-1];
 		}
+
+		answer = Math.max(answer, sum1);
+		answer = Math.max(answer, sum2);
+
+		System.out.println(answer);
 
 	}
 
