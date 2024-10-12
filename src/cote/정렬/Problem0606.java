@@ -54,7 +54,7 @@ public class Problem0606 {
 				answer.add(arr[i]);
 			}
 		}
-		
+
 		for (int i : answer) {
 			System.out.print(i + " ");
 		}
