@@ -29,6 +29,8 @@ public class Problem0705 {
 		tree.root.rt = new Node(3);
 		tree.root.lt.lt = new Node(4);
 		tree.root.lt.rt = new Node(5);
+		tree.root.rt.lt = new Node(6);
+		tree.root.rt.rt = new Node(7);
 		tree.DFS(tree.root);
 	}
 
