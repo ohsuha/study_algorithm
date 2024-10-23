@@ -10,6 +10,7 @@ public class Problem0704 {
 		int n = sc.nextInt();
 		fibo = new int[n + 1];
 		System.out.println(fibonacciDFS(n));
+
 		for (int i = 1; i <= n; i++) {
 			System.out.print(fibo[i] + " ");
 		}
@@ -25,6 +26,22 @@ public class Problem0704 {
 
 	//일반적으로 재귀보다 for문이 더 낫다. 스택 프레임을 생성해야해서 메모리 낭비가 발생함
 	public int fibonacciDFS(int n) {
+		if (n == 1) {
+			fibo[n] = 1;
+			return 1;
+		} else if (n == 2) {
+			fibo[n] = 1;
+			return 1;
+		} else {
+			return fibo[n] = fibonacciDFS(n - 1) + fibonacciDFS(n - 2);
+		}
+	}
+
+	public int fibonacciDFSMemorization(int n) {
+		if (fibo[n] > 0) {
+			return fibo[n];
+		} // memorization, 기존에 저장된 배열에 0보다 크다면 이미 찾은 값이므로 아래의 재귀를 돌 필요가 없음
+
 		if (n == 1) {
 			fibo[n] = 1;
 			return 1;
